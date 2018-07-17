@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <style>
+    body {
+      margin-top: 30px;
+    }
+    #messageArea {
+      display: none;
+    }
+    .user {
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      background: #ccc;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 10px 20px;;
+    }
+    .user i {
+      margin-right: 5px;
+    }
+    .users h4 {
+      margin-bottom: 0;
+      text-align: center;
+    }
+    li.selected {
+      background-color: #bada;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="userFormArea" class="row">
+      <div class="col-md-12">
+        <div class="form-group" id="userForm">
+          <label>Enter User Name</label>
+          <input class="form-control" id="nameInput"/>
+          <br />
+          <label>Enter Nickname</label>
+          <input class="form-control" id="nickInput"/>
+          <br />
+          <input type="submit" class="btn btn-primary" value="Ok" id="loginBtn"/>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="messageArea">
+      <div class="col-md-4">
+        <div class="card card-body bg-light">
+          <h4>Users:</h4>
+          <ul id="usersList"></ul>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <ul id="messages" class="list-group"></ul>
+        <div class="form-group" id="messageForm">
+          <label>Enter Message</label>
+          <textarea class="form-control" id="text"></textarea>
+          <br />
+          <input type="submit" class="btn btn-primary" value="Send Message" id="textSubmit"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src ="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
